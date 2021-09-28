@@ -30,5 +30,10 @@
   <%= @product.condition %>
 </p>
 
+<p>
+  <strong>Image: </strong>
+  <%= image_tag (@product.image.url(:default)) %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
