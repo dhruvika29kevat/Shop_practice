@@ -1,39 +1,37 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @product.model %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @product.condition %>
-</p>
-
-<p>
-  <strong>Image: </strong>
-  <%= image_tag (@product.image.url(:default)) %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+ <body>
+     <div class="container">
+         <h1>
+          <%= @product.name %>
+         </h1>
+         <div class="cardcontainer">
+             <div class="photo"> 
+                <%= image_tag (@product.image.url(:default)) %>
+             </div>
+             <div class="content">
+                 <p class="txt4">
+                    <%= @product.brand %>
+                 </p>
+                 <p class="txt5">
+                    <%= @product.model %>
+                 </p>
+                 <p class="txt2">
+                    <%= @product.description %>
+                 </p>
+             </div>
+             
+              <p>
+                <% if product_author(@product) %>
+                <%= link_to 'Edit', edit_product_path(@product), class: 'button' %> <%= link_to 'Back', products_path, class: 'button' %>
+              <% end %>
+              </p>
+              <div>
+               <h4 class="title is-5"><%= number_to_currency(@product.price) %></h4>
+               <p class="mb-4">Sold by <%= @product.user.name %> </p>
+               <%= button_to 'Add to cart', '#', class: 'button is-dark add-to-cart' %>
+             </div>
+         </div>
+       </div>
+ </body>
