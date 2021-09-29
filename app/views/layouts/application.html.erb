@@ -22,7 +22,7 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-      <div>
+      <div class="mb-3">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
             <%= link_to 'Home', root_path, class: "navbar-brand" %>
@@ -53,6 +53,15 @@
                 </li> -->
               </ul>
               <div class="d-flex">
+
+                <% if total_cart_items %>
+                  <%= link_to cart_path(@cart), class:"navbar-item button is-dark mr-3" do %>
+                  <span>Cart
+                    <%= cart_count_over_one %>
+                    </span>
+                  <% end %>
+                <% end %>
+
                 <% if user_signed_in? %>
                 <%= link_to 'Sell', new_product_path, class: "navbar-item button is-success" %>
 

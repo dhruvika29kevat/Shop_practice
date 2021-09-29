@@ -1,11 +1,18 @@
 <%= item.quantity %>
 
-<%= image_tag(item.product.image_url(:thumb)) %>
+<div class="card" style="width: 18rem;">
+    <%= image_tag(item.product.image_url(:thumb)) %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <strong><%= item.product.name %></strong>
+      </h5>
+      <p class="card-text">
+        <%= truncate(item.product.description, length: 140) %>
+      </p>
+      <%= link_to 'Remove Item', item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4" %>
+    </div>
+  </div>
 
-<strong><%= item.product.name %></strong>
+  <hr>
 
-<%= truncate(item.product.description, length: 140) %>
-
-<strong><%= number_to_currency(item.total_price) %></strong>
-
-<%= link_to 'Remove Item', item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4" %>
+  <strong><%= number_to_currency(item.total_price) %></strong>

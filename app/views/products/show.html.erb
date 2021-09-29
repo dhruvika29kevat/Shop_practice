@@ -30,7 +30,7 @@
               </p>
               <div>
                <h4 class="title is-5"><%= number_to_currency(@product.price) %></h4>
-               <p class="mb-4">Sold by <%= @product.user.name %> </p>
+               <!-- <p class="mb-4">Sold by <%#= @product.user.name %> </p> -->
                <%= button_to 'Add to cart', items_path(product_id: @product), class: 'button is-dark add-to-cart' %>
              </div>
          </div>

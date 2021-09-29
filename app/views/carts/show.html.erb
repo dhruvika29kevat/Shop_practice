@@ -4,10 +4,12 @@
 
 <%= render(@cart.items) %>
 
-<%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
 
+<%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
-
-<%= number_to_currency(@cart.total_price) %>
+<hr>
+<strong>
+    <%= number_to_currency(@cart.total_price) %>
+</strong>
