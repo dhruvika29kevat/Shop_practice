@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :items
+  resources :carts
   resources :products
   devise_for :users, controllers: {
     registration: 'registration'

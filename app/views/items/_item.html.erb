@@ -1,0 +1,11 @@
+<%= item.quantity %>
+
+<%= image_tag(item.product.image_url(:thumb)) %>
+
+<strong><%= item.product.name %></strong>
+
+<%= truncate(item.product.description, length: 140) %>
+
+<strong><%= number_to_currency(item.total_price) %></strong>
+
+<%= link_to 'Remove Item', item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4" %>

@@ -23,7 +23,7 @@
           <div class="text-center my-4"> 
             <%= link_to 'Show', product, class: "button btn-warning is-small" %>  
           </div>
-          <% if product_author(product) %>
+        <% if product_author(product) %>
           <div class="text-center my-4"> 
             <%= link_to 'Edit', edit_product_path(product), class: "button btn-warning is-small" %> 
             <%= link_to 'Destroy', product, method: :delete, class: "button btn-danger is-small", data: { confirm: 'Are you sure?' } %>
