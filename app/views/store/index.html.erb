@@ -1,2 +1,4 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<h1 class="text-center">Your Order</h1>
+<%= render(@cart.items) %> 
+
+<%= button_to 'Make Payment', class: "btn btn-dark" %>

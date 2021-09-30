@@ -11,5 +11,7 @@
 <%= link_to 'Back', carts_path %>
 <hr>
 <strong>
-    <%= number_to_currency(@cart.total_price) %>
+    <%= number_to_currency(@cart.total_price) %> 
+    <%= link_to 'Place an Order', store_index_path, class: "btn btn-warning" %>
 </strong>
+
